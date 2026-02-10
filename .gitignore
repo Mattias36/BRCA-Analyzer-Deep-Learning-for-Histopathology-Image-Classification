@@ -20,3 +20,6 @@ venv/
 
 .env
 .ipynb_checkpoints/
+/MobileNet_weights/
+/Resnet_weights/
+/scans/
