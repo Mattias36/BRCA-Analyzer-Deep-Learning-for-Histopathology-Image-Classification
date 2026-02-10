@@ -1,0 +1,36 @@
+.scan-button{
+    display: inline-flex;
+    position: relative;
+    background-color: rgb(92, 82, 236);
+    width: 12rem;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: aliceblue;
+    padding: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.scan-button:hover {
+    background-color: rgba(86, 76, 226, 0.85);
+    color: rgb(222, 238, 255);
+    transform: translateY(-1px);
+}
+
+.xai-images img{
+    width: 25%;
+    padding: 12px;
+    border-radius: 20px;
+    
+}
+.xai-images{
+    text-align: center;
+    margin-top: 2rem;
+    
+}

@@ -1,0 +1,137 @@
+.generator-controls {
+    display: flex;
+    justify-content: center;       
+    gap: 1rem;                     
+    margin: 1.5rem 0;              
+    flex-wrap: wrap;               
+}
+
+.generator-controls button {
+    background-color: rgb(92, 82, 236);
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    min-width: 150px;              /* wszystkie przyciski mają podobny rozmiar */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.generator-controls button:hover {
+    background-color: rgb(70, 63, 176);
+    transform: translateY(-2px);
+}
+
+.generator-controls button:active {
+    transform: translateY(0px);
+    background-color: rgb(58, 52, 150);
+}
+
+#loading-spinner {
+    padding: 10px 20px;
+    background-color: rgba(92, 82, 236, 0.15);
+    border: 2px solid rgb(92, 82, 236);
+    color: rgb(92, 82, 236);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    animation: pulse 1s infinite ease-in-out;
+    display: none; /* JS aktywuje */
+}
+
+@keyframes pulse {
+    0%   { opacity: 0.5; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+#loading-spinner:after {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    border: 3px solid rgb(92, 82, 236);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+    to { transform: rotate(360deg); }
+}
+
+
+#openseadragon-viewer {
+    position: relative; 
+}
+
+.heatmap-controls-overlay {
+    position: absolute;
+    top: 160px;
+    right: 15px;
+
+    background: rgba(20, 20, 20, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    padding: 12px 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    z-index: 9999;
+}
+
+.heatmap-controls-overlay label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #ffffff;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 6px 8px;
+    border-radius: 6px;
+
+    transition: background 0.15s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.heatmap-controls-overlay label:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(2px);
+}
+
+.heatmap-controls-overlay input[type="radio"] {
+    accent-color: #5c52ec;   /* kolor ResNet */
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+
+#heatmap-tooltip {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}

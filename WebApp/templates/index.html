@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Main Page WSI Analysis{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;">Whole Slide Images analysis, using deep learning methods</h1>
+
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 1.5rem auto;">
+        This project focuses on the analysis of Whole Slide Images (WSI) in breast cancer using deep learning.
+        We compare convolutional neural networks such as ResNet and MobileNet to automatically classify tissue
+        tiles as healthy or tumor and visualize model predictions directly on the original slide.
+    </p>
+
+    
+
+    <div style="text-align: center;">
+        <a class="scan-button" href="{{ url_for('scan') }}">Begin analysis</a>
+    </div>
+
+    <div class ="xai-images">
+        <img src="static\images_xai\xai_results_resnet\xai_result_tumor_resnet.png">
+        <img src="static\images_xai\xai_results_mobilenet\xai_result_test_mobilenet.png">
+        <img src="static\images_xai\xai_results_resnet\xai_result_healthy.png">
+
+    </div>
+{% endblock %}

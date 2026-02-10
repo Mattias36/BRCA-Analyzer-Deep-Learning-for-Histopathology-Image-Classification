@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Scan view{% endblock %}
+
+{% block content %}
+    <h2 style="text-align: center;">Choose between ResNet-18, MobileNetV2 or comapre with real adnotations</h2>
+
+    <div class="generator-controls">
+        <button id="btn-gen-resnet">ResNet</button>
+        <button id="btn-gen-mobilenet">MobileNet</button>
+        <button id="btn-gen-truth">Real adnotations</button>
+        <div id="loading-spinner" style="display: none;">Generating...</div>
+    </div>
+    
+    <div id="openseadragon-viewer" style="width: 100%; height: 70vh; background-color: #000; border: 1px solid #333;">
+        <div id="heatmap-tooltip"></div>
+    </div>
+    
+
+    
+{% endblock %}
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.1/openseadragon.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scan.js') }}"></script>
+{% endblock %}
